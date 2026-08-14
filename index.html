@@ -1,124 +1,73 @@
 <!doctype html>
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#090b0f">
-<title>GymLogic 2.1</title>
-<link rel="manifest" href="./manifest.json">
-<link rel="icon" href="./icon.svg">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="GymLogic">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090b0f"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="GymLogic"><link rel="manifest" href="./manifest.json"><link rel="icon" href="./icon.svg">
+<title>GymLogic 2.2</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#090b0f;color:#f7f8fa;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif}.app{max-width:600px;margin:auto;min-height:100vh;padding-bottom:96px}.top{padding:28px 20px 12px}.logo{font-size:30px;font-weight:850}.logo b{color:#4d8dff}.version{font-size:10px;color:#737b89;margin-top:2px;letter-spacing:.12em}.page{display:none;padding:8px 20px}.page.active{display:block}h1{font-size:30px;margin:12px 0 20px}.muted{color:#969daa}.card{background:#15181e;border:1px solid #252a34;border-radius:20px;padding:18px;margin:12px 0}.hero{background:linear-gradient(145deg,#15356f,#15202d);border:0}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.1em;color:#aeb7c7}.title{font-size:23px;font-weight:800;margin:7px 0}.button{border:0;background:#4d8dff;color:white;font-weight:800;border-radius:14px;padding:14px 18px;font-size:15px}.full{width:100%;margin-top:14px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat b{font-size:25px;display:block;margin:5px 0}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.exercise{padding:16px 0;border-bottom:1px solid #272c35}.exercise:last-child{border:0}.check{width:30px;height:30px;border-radius:50%;border:1px solid #4a5260;background:none;color:#aaa;font-weight:800}.check.done{background:#32b96d;color:white;border-color:#32b96d}.setgrid{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:center;margin-top:10px}.setgrid input{width:100%;background:#0e1116;border:1px solid #303744;border-radius:10px;color:white;padding:10px;font-size:15px}.timer{font-size:48px;font-weight:850;text-align:center;padding:12px}.nav{position:fixed;bottom:0;left:0;right:0;background:#101319ee;backdrop-filter:blur(18px);border-top:1px solid #252a34}.navin{max-width:600px;margin:auto;display:flex;justify-content:space-around;padding:10px 4px calc(10px + env(safe-area-inset-bottom))}.nav button{border:0;background:none;color:#8e96a4;font-size:11px}.nav button.active{color:#4d8dff}.nav i{display:block;font-size:20px;font-style:normal;margin-bottom:3px}.pill{padding:6px 10px;border-radius:20px;background:#202631;color:#aeb8c8;font-size:12px}.back{border:0;background:none;color:#4d8dff;font-size:16px}.price{font-size:26px;font-weight:850}.plan{cursor:pointer}.small{font-size:13px}.resume{border-left:3px solid #4d8dff;padding-left:12px}.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#202631;border:1px solid #353d4b;border-radius:12px;padding:10px 14px;font-size:13px;display:none;z-index:5}
+*{box-sizing:border-box}body{margin:0;background:#090b0f;color:#f7f8fa;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif}.app{max-width:600px;margin:auto;min-height:100vh;padding-bottom:96px}.top{padding:27px 20px 10px}.logo{font-size:30px;font-weight:850}.logo b{color:#4d8dff}.ver{font-size:10px;color:#747d8d;letter-spacing:.12em;margin-top:3px}.page{display:none;padding:10px 20px}.page.active{display:block}h1{font-size:29px;margin:10px 0 20px}.card{background:#15181e;border:1px solid #262c36;border-radius:19px;padding:17px;margin:12px 0}.hero{background:linear-gradient(145deg,#15356f,#151f2c);border:0}.eyebrow{font-size:10px;font-weight:800;letter-spacing:.11em;color:#aab5c8}.title{font-size:22px;font-weight:800;margin:6px 0}.muted{color:#969daa}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.button{border:0;background:#4d8dff;color:white;font-weight:800;border-radius:13px;padding:13px 16px;font-size:15px}.full{width:100%;margin-top:12px}.pill{background:#202733;color:#aeb8c8;border-radius:20px;padding:6px 9px;font-size:11px}.nav{position:fixed;left:0;right:0;bottom:0;background:#101319ee;backdrop-filter:blur(18px);border-top:1px solid #252a34}.navin{max-width:600px;margin:auto;display:flex;justify-content:space-around;padding:9px 4px calc(9px + env(safe-area-inset-bottom))}.nav button{border:0;background:none;color:#8e96a4;font-size:11px}.nav button.active{color:#4d8dff}.nav i{display:block;font-style:normal;font-size:20px;margin-bottom:2px}.day{cursor:pointer}.exercise{padding:14px 0;border-bottom:1px solid #282e38}.exercise:last-child{border-bottom:0}.sets{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap}.set{width:35px;height:35px;border-radius:50%;border:1px solid #414957;background:#0e1116;color:#9aa3b2}.set.done{background:#32b96d;border-color:#32b96d;color:#fff}.kgbox{background:#10141a;border:1px solid #303744;border-radius:14px;padding:15px;margin-top:14px}.kgbox input{width:100%;background:#090c10;border:1px solid #333b49;color:#fff;border-radius:10px;padding:13px;font-size:18px;margin-top:8px}.timer{font-size:44px;text-align:center;font-weight:850;padding:8px}.back{border:0;background:none;color:#4d8dff;font-size:16px;padding:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat b{font-size:24px;display:block;margin:5px 0}.form input,.form select{width:100%;background:#0e1116;border:1px solid #303744;color:white;border-radius:10px;padding:12px;margin-top:6px;font-size:15px}.form label{display:block;margin:11px 0;color:#aeb6c4;font-size:13px}.exerciseCard{cursor:pointer}.toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%);background:#222832;border:1px solid #3a4352;border-radius:12px;padding:10px 14px;display:none;z-index:5;font-size:13px}
 </style>
 </head>
-<body>
-<div class="app">
-<header class="top"><div class="logo">Gym<b>Logic</b></div><div class="version">VERSIONE 2.1 · SMART BOOKMARK</div></header>
+<body><div class="app">
+<header class="top"><div class="logo">Gym<b>Logic</b></div><div class="ver">VERSIONE 2.2 · SMART TRAINING</div></header>
 
 <section id="home" class="page active">
-<div class="card hero">
-<div class="eyebrow">CONTINUA DA DOVE HAI LASCIATO</div>
-<div class="title" id="resumeTitle">Petto & Tricipiti</div>
-<div class="muted" id="resumeText">Panca inclinata · Serie 3 di 4</div>
-<button class="button full" onclick="resumeWorkout()">▶ Continua allenamento</button>
-</div>
-<div class="stats">
-<div class="card stat"><span class="muted">Settimana</span><b>3 / 8</b><span class="muted">programma</span></div>
-<div class="card stat"><span class="muted">Costanza</span><b id="consistency">75%</b><span class="muted">obiettivo</span></div>
-</div>
-<div class="card"><div class="eyebrow">PROSSIMO ALLENAMENTO</div><div class="row"><div><div class="title">Gambe</div><div class="muted">Domani · 65 min</div></div><span>›</span></div></div>
-<div class="card"><div class="row"><div><div class="title">Ultimo allenamento</div><div class="muted" id="lastWorkout">Dorso & Bicipiti · ieri</div></div><span class="pill">Salvato ✓</span></div></div>
+<div class="card hero"><div class="eyebrow">CONTINUA DA DOVE HAI LASCIATO</div><div class="title" id="resumeName">Petto & Tricipiti</div><div class="muted" id="resumeInfo">Panca piana · Serie 3 di 4</div><button class="button full" onclick="resume()">▶ Continua allenamento</button></div>
+<div class="grid"><div class="card stat"><span class="muted">Settimana</span><b>3 / 8</b><span class="muted">programma</span></div><div class="card stat"><span class="muted">PR</span><b id="prCount">3</b><span class="muted">questo mese</span></div></div>
+<div class="card"><div class="eyebrow">PROSSIMO</div><div class="title">Gambe</div><div class="muted">Venerdì · 65 min</div></div>
 </section>
 
-<section id="programs" class="page">
-<h1>Programma</h1>
-<div class="card"><div class="eyebrow">PROGRAMMA ATTIVO</div><div class="title">Bodybuilding · Multifrequenza</div><div class="muted">Settimana 3 di 8</div></div>
-<div class="card"><div class="row"><b>Lunedì</b><span class="pill">✓</span></div><div class="muted">Petto & Tricipiti</div></div>
-<div class="card" onclick="show('workout')"><div class="row"><b>Mercoledì</b><span class="pill">IN CORSO</span></div><div class="muted">Dorso & Bicipiti</div></div>
-<div class="card"><div class="row"><b>Venerdì</b><span class="pill">PROSSIMO</span></div><div class="muted">Gambe</div></div>
+<section id="program" class="page">
+<h1>I miei programmi</h1>
+<div class="card"><div class="row"><div><div class="eyebrow">ATTIVO</div><div class="title">Ipertrofia 8 settimane</div><div class="muted">4 giorni · multifrequenza</div></div><span class="pill">ATTIVO</span></div></div>
+<div class="card day" onclick="openDay('Petto & Tricipiti')"><div class="row"><div><b>Lunedì</b><div class="muted">Petto & Tricipiti · 5 esercizi</div></div><span>›</span></div></div>
+<div class="card day" onclick="openDay('Dorso & Bicipiti')"><div class="row"><div><b>Mercoledì</b><div class="muted">Dorso & Bicipiti · 5 esercizi</div></div><span>›</span></div></div>
+<div class="card day" onclick="openDay('Gambe')"><div class="row"><div><b>Venerdì</b><div class="muted">Gambe · 6 esercizi</div></div><span>›</span></div></div>
+<button class="button full" onclick="newProgram()">＋ Crea nuovo programma</button>
 </section>
 
-<section id="workout" class="page">
-<button class="back" onclick="show('home')">‹ Torna alla Home</button>
-<h1>Petto & Tricipiti</h1>
-<div class="row"><div class="muted">Oggi · segnalibro automatico</div><span class="pill" id="bookmarkPill">Serie 3</span></div>
+<section id="day" class="page"><button class="back" onclick="show('program')">‹ Programmi</button><h1 id="dayTitle">Petto & Tricipiti</h1>
+<div class="card"><div class="eyebrow">STRUTTURA</div><div class="muted">Esercizi · serie × ripetizioni · recupero</div></div>
+<div id="exerciseList"></div>
+<button class="button full" onclick="startSelectedDay()">▶ Inizia allenamento</button></section>
 
-<div class="card">
-<div class="row"><div><div class="eyebrow">ESERCIZIO 1 / 5</div><div class="title">Panca inclinata</div></div><span class="pill">4 × 8</span></div>
-
-<div class="exercise">
-<div class="row"><b>Serie 1</b><button id="check1" class="check" onclick="toggleSet(1)">✓</button></div>
-<div class="setgrid"><input id="kg1" type="number" step="0.5" placeholder="kg"><input id="rep1" type="number" placeholder="reps"><span class="small muted">salvato</span></div>
-</div>
-<div class="exercise">
-<div class="row"><b>Serie 2</b><button id="check2" class="check" onclick="toggleSet(2)">✓</button></div>
-<div class="setgrid"><input id="kg2" type="number" step="0.5" placeholder="kg"><input id="rep2" type="number" placeholder="reps"><span class="small muted">salvato</span></div>
-</div>
-<div class="exercise">
-<div class="row"><b>Serie 3</b><button id="check3" class="check" onclick="toggleSet(3)">✓</button></div>
-<div class="setgrid"><input id="kg3" type="number" step="0.5" placeholder="kg"><input id="rep3" type="number" placeholder="reps"><span class="small muted">SEI QUI</span></div>
-</div>
-<div class="exercise">
-<div class="row"><b>Serie 4</b><button id="check4" class="check" onclick="toggleSet(4)">✓</button></div>
-<div class="setgrid"><input id="kg4" type="number" step="0.5" placeholder="kg"><input id="rep4" type="number" placeholder="reps"><span class="small muted">salvato</span></div>
-</div>
-</div>
-
-<div class="card"><div class="eyebrow">RECUPERO</div><div id="timer" class="timer">01:30</div><button class="button full" onclick="startTimer()">Avvia recupero</button></div>
-
-<div class="card resume"><div class="eyebrow">SEGNALIBRO</div><div class="small" id="bookmarkDetail">Sei alla serie 3. Chiudendo l'app, GymLogic manterrà questo punto su questo dispositivo.</div></div>
-
-<div class="card"><div class="eyebrow">STORICO</div><div class="small muted">Ultima volta: 70 kg × 8 · 70 kg × 8 · 70 kg × 7 · 67,5 kg × 8</div></div>
-<button class="button full" onclick="complete()">✓ Completa allenamento</button>
+<section id="workout" class="page"><button class="back" onclick="show('home')">‹ Home</button><h1 id="workTitle">Petto & Tricipiti</h1>
+<div class="row"><span class="muted" id="workProgress">Esercizio 1 di 5</span><span class="pill" id="bookmark">Serie 3/4</span></div>
+<div id="workArea"></div>
+<div class="card"><div class="eyebrow">RECUPERO</div><div class="timer" id="timer">01:30</div><button class="button full" onclick="timerStart()">Avvia recupero</button></div>
 </section>
 
-<section id="progress" class="page">
-<h1>Progressi</h1>
-<div class="stats"><div class="card stat"><span class="muted">Volume</span><b id="volume">8.420</b><span class="muted">kg questa settimana</span></div><div class="card stat"><span class="muted">PR</span><b id="prs">3</b><span class="muted">questo mese</span></div></div>
-<div class="card"><div class="eyebrow">PANCA INCLINATA</div><div class="title" id="bestLift">80 kg</div><div class="muted">Miglior carico registrato</div></div>
-</section>
+<section id="progress" class="page"><h1>Progressi</h1><div class="grid"><div class="card stat"><span class="muted">Allenamenti</span><b id="workouts">0</b><span class="muted">completati</span></div><div class="card stat"><span class="muted">PR</span><b id="prs">3</b><span class="muted">totali</span></div></div>
+<div class="card"><div class="eyebrow">ULTIMI CARICHI</div><div id="history" class="muted">Nessun dato ancora.</div></div></section>
 
-<section id="profile" class="page">
-<h1>Profilo</h1>
-<div class="card"><div class="eyebrow">ATLETA</div><div class="title">Daniele</div><div class="muted">Obiettivo · Ipertrofia</div></div>
-<div class="card"><div class="eyebrow">GYMLOGIC PREMIUM</div><div class="title">Scegli il tuo piano</div>
-<div class="card plan"><div class="row"><div><b>Mensile</b><br><span class="muted">Massima flessibilità</span></div><span class="price">€9,99</span></div></div>
-<div class="card plan"><div class="row"><div><b>Trimestrale</b><br><span class="muted">Risparmia</span></div><span class="price">€24,99</span></div></div>
-<div class="card plan"><div class="row"><div><b>Semestrale</b><br><span class="muted">Più conveniente</span></div><span class="price">€44,99</span></div></div>
-<div class="card plan"><div class="row"><div><b>Annuale</b><br><span class="muted">Miglior valore</span></div><span class="price">€69,99</span></div></div>
-</div>
-<div class="card"><div class="title">👥 Porta un amico</div><div class="muted">Condividi il tuo invito. Se l'amico si abbona, si applica il 10% di sconto secondo le condizioni della promozione.</div><button class="button full" onclick="share()">Condividi invito</button></div>
-</section>
+<section id="profile" class="page"><h1>Profilo</h1><div class="card"><div class="eyebrow">ATLETA</div><div class="title">Daniele</div><div class="muted">Obiettivo · Ipertrofia</div></div>
+<div class="card"><div class="eyebrow">PREMIUM</div><div class="title">Scegli il tuo piano</div><div class="muted">Mensile €9,99 · Trimestrale €24,99 · Semestrale €44,99 · Annuale €69,99</div></div>
+<div class="card"><div class="title">👥 Porta un amico</div><div class="muted">Invita un amico e applica il 10% di sconto secondo le condizioni della promozione.</div><button class="button full" onclick="share()">Condividi invito</button></div></section>
 </div>
 
-<div id="toast" class="toast"></div>
-<nav class="nav"><div class="navin">
-<button id="n-home" class="active" onclick="show('home')"><i>⌂</i>Home</button>
-<button id="n-programs" onclick="show('programs')"><i>☷</i>Programma</button>
-<button id="n-progress" onclick="show('progress')"><i>↗</i>Progressi</button>
-<button id="n-profile" onclick="show('profile')"><i>●</i>Profilo</button>
-</div></nav>
+<nav class="nav"><div class="navin"><button id="n-home" class="active" onclick="show('home')"><i>⌂</i>Home</button><button id="n-program" onclick="show('program')"><i>☷</i>Programma</button><button id="n-progress" onclick="show('progress')"><i>↗</i>Progressi</button><button id="n-profile" onclick="show('profile')"><i>●</i>Profilo</button></div></nav><div id="toast" class="toast"></div>
 
 <script>
-const KEY='gymlogic_v21';
-let state=JSON.parse(localStorage.getItem(KEY)||'null')||{currentSet:3,sets:{},completed:false,last:null};
-function save(){localStorage.setItem(KEY,JSON.stringify(state))}
-function show(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));let n=document.getElementById('n-'+id);if(n)n.classList.add('active');scrollTo(0,0);render()}
-function toast(msg){let e=document.getElementById('toast');e.textContent=msg;e.style.display='block';clearTimeout(window.toastT);window.toastT=setTimeout(()=>e.style.display='none',1800)}
-function setField(i,type,value){state.sets[i]=state.sets[i]||{};state.sets[i][type]=value;state.currentSet=Math.min(4,Math.max(1,i));save();renderResume()}
-function toggleSet(i){state.sets[i]=state.sets[i]||{};state.sets[i].done=!state.sets[i].done;if(state.sets[i].done && i<4)state.currentSet=i+1;else if(!state.sets[i].done)state.currentSet=i;save();render();toast(state.sets[i].done?'Serie completata ✓':'Serie riaperta')}
-function render(){for(let i=1;i<=4;i++){let s=state.sets[i]||{};let k=document.getElementById('kg'+i),r=document.getElementById('rep'+i),c=document.getElementById('check'+i);if(k&&document.activeElement!==k)k.value=s.kg||'';if(r&&document.activeElement!==r)r.value=s.rep||'';if(c)c.classList.toggle('done',!!s.done)}let p=document.getElementById('bookmarkPill');if(p)p.textContent='Serie '+state.currentSet;let d=document.getElementById('bookmarkDetail');if(d)d.textContent='Sei alla serie '+state.currentSet+'. Chiudendo l’app, GymLogic manterrà questo punto su questo dispositivo.';renderResume()}
-function renderResume(){let t=document.getElementById('resumeText');if(t)t.textContent='Panca inclinata · Serie '+state.currentSet+' di 4';let b=document.getElementById('resumeTitle');if(b)b.textContent='Petto & Tricipiti'}
-function resumeWorkout(){show('workout');setTimeout(()=>{let e=document.getElementById('kg'+state.currentSet);if(e)e.scrollIntoView({behavior:'smooth',block:'center'})},150)}
-document.addEventListener('input',e=>{if(e.target.id&&/^(kg|rep)[1-4]$/.test(e.target.id)){let i=Number(e.target.id.slice(-1)),type=e.target.id.startsWith('kg')?'kg':'rep';setField(i,type,e.target.value)}});
-let t=90,interval;
-function startTimer(){clearInterval(interval);t=90;interval=setInterval(()=>{t--;let m=String(Math.floor(t/60)).padStart(2,'0'),s=String(t%60).padStart(2,'0');document.getElementById('timer').textContent=m+':'+s;if(t<=0){clearInterval(interval);toast('Recupero terminato 🔔')}},1000)}
-function complete(){state.completed=true;state.last=new Date().toLocaleDateString('it-IT');save();toast('Allenamento completato ✓');setTimeout(()=>show('home'),500)}
-async function share(){if(navigator.share)await navigator.share({title:'GymLogic',text:'Entra in GymLogic con il mio invito.'});else toast('Condivisione disponibile dal menu del browser')}
+const KEY='gymlogic22';let S=JSON.parse(localStorage.getItem(KEY)||'null')||{day:'Petto & Tricipiti',ex:0,set:1,sets:{},weights:{},history:[],workouts:0};const plans={
+'Petto & Tricipiti':[{n:'Panca piana',s:4,r:8,rest:120},{n:'Panca inclinata',s:3,r:10,rest:90},{n:'Croci ai cavi',s:3,r:12,rest:60},{n:'Dip',s:3,r:10,rest:90},{n:'Pushdown',s:3,r:12,rest:60}],
+'Dorso & Bicipiti':[{n:'Lat machine',s:4,r:8,rest:120},{n:'Rematore',s:4,r:8,rest:120},{n:'Pulley',s:3,r:10,rest:90},{n:'Curl bilanciere',s:3,r:10,rest:90},{n:'Curl manubri',s:3,r:12,rest:60}],
+'Gambe':[{n:'Squat',s:4,r:8,rest:150},{n:'Pressa',s:4,r:10,rest:120},{n:'Leg extension',s:3,r:12,rest:75},{n:'Leg curl',s:3,r:12,rest:75},{n:'Calf raise',s:4,r:12,rest:60},{n:'Addominali',s:3,r:15,rest:45}]};
+function save(){localStorage.setItem(KEY,JSON.stringify(S))}
+function toast(x){let t=document.getElementById('toast');t.textContent=x;t.style.display='block';clearTimeout(window.tt);window.tt=setTimeout(()=>t.style.display='none',1800)}
+function show(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));let n=document.getElementById('n-'+id);if(n)n.classList.add('active');scrollTo(0,0);render()}
+function openDay(day){S.day=day;S.ex=0;S.set=1;save();document.getElementById('dayTitle').textContent=day;renderDay();show('day')}
+function renderDay(){let a=plans[S.day]||plans['Petto & Tricipiti'];document.getElementById('exerciseList').innerHTML=a.map((e,i)=>`<div class="card exerciseCard"><div class="row"><div><b>${i+1}. ${e.n}</b><div class="muted">${e.s} × ${e.r} · recupero ${e.rest}"</div></div><span>›</span></div></div>`).join('')}
+function startSelectedDay(){S.ex=0;S.set=1;save();show('workout')}
+function resume(){show('workout')}
+function current(){return (plans[S.day]||plans['Petto & Tricipiti'])[S.ex]}
+function renderWorkout(){let e=current();if(!e)return;document.getElementById('workTitle').textContent=S.day;document.getElementById('workProgress').textContent=`Esercizio ${S.ex+1} di ${(plans[S.day]||[]).length}`;document.getElementById('bookmark').textContent=`Serie ${S.set}/${e.s}`;let key=S.day+'|'+S.ex;let w=S.weights[key]||'';let sets=Array.from({length:e.s},(_,i)=>`<button class="set ${i+1<S.set?'done':''}" onclick="markSet(${i+1})">${i+1}</button>`).join('');document.getElementById('workArea').innerHTML=`<div class="card"><div class="eyebrow">ESERCIZIO ${S.ex+1}</div><div class="title">${e.n}</div><div class="muted">${e.s} serie × ${e.r} ripetizioni · recupero ${e.rest}"</div><div class="sets">${sets}</div><div class="kgbox"><b>Carico utilizzato</b><div class="muted">Inseriscilo una sola volta, a fine esercizio.</div><input id="weight" type="number" step="0.5" placeholder="es. 80 kg" value="${w}"><button class="button full" onclick="saveWeight()">Salva carico e continua</button></div></div>`}
+function markSet(i){if(i>S.set)return toast('Completa prima la serie '+S.set);S.set=i<current().s?i+1:i;save();renderWorkout();toast(i===current().s?'Esercizio completato: salva il carico':'Serie '+i+' completata ✓')}
+function saveWeight(){let v=document.getElementById('weight').value;if(!v)return toast('Inserisci il kg utilizzato');let key=S.day+'|'+S.ex;S.weights[key]=v;S.history.unshift({day:S.day,ex:current().n,kg:v,date:new Date().toLocaleDateString('it-IT')});S.history=S.history.slice(0,20);if(S.ex<plans[S.day].length-1){S.ex++;S.set=1;save();renderWorkout();toast('Carico salvato ✓')}else{S.workouts++;S.ex=0;S.set=1;save();toast('Allenamento completato 🎉');setTimeout(()=>show('home'),500)}}
+function render(){renderDay();renderWorkout();document.getElementById('resumeInfo').textContent=`${S.day} · ${current().n} · Serie ${S.set} di ${current().s}`;document.getElementById('workouts').textContent=S.workouts;document.getElementById('prs').textContent=Math.max(3,S.history.length>0?4:3);document.getElementById('history').innerHTML=S.history.length?S.history.map(x=>`${x.ex} · <b>${x.kg} kg</b> · ${x.date}`).join('<br>'):'Nessun dato ancora.'}
+let tt=90,ti;function timerStart(){clearInterval(ti);tt=current().rest;ti=setInterval(()=>{tt--;document.getElementById('timer').textContent=String(Math.floor(tt/60)).padStart(2,'0')+':'+String(tt%60).padStart(2,'0');if(tt<=0){clearInterval(ti);toast('Recupero terminato 🔔')}},1000)}
+function newProgram(){toast('Creazione programmi personalizzati: prossimo modulo')}
+async function share(){if(navigator.share)await navigator.share({title:'GymLogic',text:'Entra in GymLogic con il mio invito.'});else toast('Usa Condividi del browser')}
 render();
-</script>
-<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js"));}</script>
+</script><script>if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js')</script>
 </body></html>
