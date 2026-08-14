@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d10">
+<title>GymLogic</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#090b0f;color:#f7f8fa;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif}.app{max-width:600px;margin:auto;min-height:100vh;padding-bottom:96px}.top{padding:28px 20px 12px}.logo{font-size:30px;font-weight:850}.logo b{color:#4d8dff}.page{display:none;padding:8px 20px}.page.active{display:block}h1{font-size:30px;margin:12px 0 20px}.muted{color:#969daa}.card{background:#15181e;border:1px solid #252a34;border-radius:20px;padding:18px;margin:12px 0}.hero{background:linear-gradient(145deg,#15356f,#15202d);border:0}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.1em;color:#aeb7c7}.title{font-size:23px;font-weight:800;margin:7px 0}.button{border:0;background:#4d8dff;color:white;font-weight:800;border-radius:14px;padding:14px 18px;font-size:15px}.full{width:100%;margin-top:14px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat b{font-size:25px;display:block;margin:5px 0}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.exercise{padding:16px 0;border-bottom:1px solid #272c35}.exercise:last-child{border:0}.exercise .right{text-align:right}.check{width:30px;height:30px;border-radius:50%;border:1px solid #4a5260;background:none;color:#aaa}.check.done{background:#32b96d;color:white;border-color:#32b96d}.timer{font-size:48px;font-weight:850;text-align:center;padding:12px}.nav{position:fixed;bottom:0;left:0;right:0;background:#101319ee;backdrop-filter:blur(18px);border-top:1px solid #252a34}.navin{max-width:600px;margin:auto;display:flex;justify-content:space-around;padding:10px 4px calc(10px + env(safe-area-inset-bottom))}.nav button{border:0;background:none;color:#8e96a4;font-size:11px}.nav button.active{color:#4d8dff}.nav i{display:block;font-size:20px;font-style:normal;margin-bottom:3px}.pill{padding:6px 10px;border-radius:20px;background:#202631;color:#aeb8c8;font-size:12px}.back{border:0;background:none;color:#4d8dff;font-size:16px}.price{font-size:26px;font-weight:850}.plan{cursor:pointer}.small{font-size:13px}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div class="logo">Gym<b>Logic</b></div></header>
+
+<section id="home" class="page active">
+<div class="card hero">
+<div class="eyebrow">CONTINUA DA DOVE HAI LASCIATO</div>
+<div class="title">Petto & Tricipiti</div>
+<div class="muted">Panca inclinata · Serie 3 di 4</div>
+<button class="button full" onclick="show('workout')">▶ Continua allenamento</button>
+</div>
+<div class="stats">
+<div class="card stat"><span class="muted">Settimana</span><b>3 / 4</b><span class="muted">allenamenti</span></div>
+<div class="card stat"><span class="muted">Costanza</span><b>75%</b><span class="muted">obiettivo</span></div>
+</div>
+<div class="card"><div class="eyebrow">PROSSIMO ALLENAMENTO</div><div class="row"><div><div class="title">Gambe</div><div class="muted">Domani · 65 min</div></div><span>›</span></div></div>
+<div class="card"><div class="row"><div><div class="title">Ultimo allenamento</div><div class="muted">Dorso & Bicipiti · ieri</div></div><span class="pill">Completato ✓</span></div></div>
+</section>
+
+<section id="programs" class="page">
+<h1>Programma</h1>
+<div class="card"><div class="eyebrow">PROGRAMMA ATTIVO</div><div class="title">Bodybuilding · Multifrequenza</div><div class="muted">Settimana 3 di 8</div></div>
+<div class="card"><div class="row"><b>Lunedì</b><span class="pill">✓</span></div><div class="muted">Petto & Tricipiti</div></div>
+<div class="card" onclick="show('workout')"><div class="row"><b>Mercoledì</b><span class="pill">IN CORSO</span></div><div class="muted">Dorso & Bicipiti</div></div>
+<div class="card"><div class="row"><b>Venerdì</b><span class="pill">PROSSIMO</span></div><div class="muted">Gambe</div></div>
+</section>
+
+<section id="workout" class="page">
+<button class="back" onclick="show('home')">‹ Torna alla Home</button>
+<h1>Petto & Tricipiti</h1>
+<div class="muted">Oggi · segnalibro automatico attivo</div>
+<div class="card">
+<div class="row"><div><div class="eyebrow">ESERCIZIO 1 / 5</div><div class="title">Panca inclinata</div></div><span class="pill">4 × 8</span></div>
+<div class="exercise"><div class="row"><div><b>Serie 1</b><br><span class="muted">70 kg × 8</span></div><button class="check done" onclick="toggle(this)">✓</button></div></div>
+<div class="exercise"><div class="row"><div><b>Serie 2</b><br><span class="muted">70 kg × 8</span></div><button class="check done" onclick="toggle(this)">✓</button></div></div>
+<div class="exercise"><div class="row"><div><b>Serie 3</b><br><span class="muted">72,5 kg × 7</span></div><button class="check" onclick="toggle(this)">✓</button></div></div>
+<div class="exercise"><div class="row"><div><b>Serie 4</b><br><span class="muted">72,5 kg × 6</span></div><button class="check" onclick="toggle(this)">✓</button></div></div>
+</div>
+<div class="card"><div class="eyebrow">RECUPERO</div><div id="timer" class="timer">01:30</div><button class="button full" onclick="startTimer()">Avvia recupero</button></div>
+<div class="card"><div class="eyebrow">STORICO</div><div class="small muted">Ultima volta: 70 kg × 8 · 70 kg × 8 · 70 kg × 7 · 67,5 kg × 8</div></div>
+<button class="button full" onclick="complete()">✓ Completa allenamento</button>
+</section>
+
+<section id="progress" class="page">
+<h1>Progressi</h1>
+<div class="stats"><div class="card stat"><span class="muted">Volume</span><b>8.420</b><span class="muted">kg questa settimana</span></div><div class="card stat"><span class="muted">PR</span><b>3</b><span class="muted">questo mese</span></div></div>
+<div class="card"><div class="eyebrow">CARICHI</div><div class="exercise"><div><b>Panca inclinata</b><br><span class="muted">+5 kg negli ultimi 30 giorni</span></div><b>80 kg</b></div><div class="exercise"><div><b>Squat</b><br><span class="muted">+10 kg negli ultimi 30 giorni</span></div><b>120 kg</b></div><div class="exercise"><div><b>Rematore</b><br><span class="muted">+5 kg negli ultimi 30 giorni</span></div><b>90 kg</b></div></div>
+</section>
+
+<section id="profile" class="page">
+<h1>Profilo</h1>
+<div class="card"><div class="eyebrow">ATLETA</div><div class="title">Daniele</div><div class="muted">Obiettivo · Ipertrofia</div></div>
+<div class="card"><div class="eyebrow">GYMLOGIC PREMIUM</div><div class="title">Scegli il tuo piano</div>
+<div class="card plan"><div class="row"><div><b>Mensile</b><br><span class="muted">Massima flessibilità</span></div><span class="price">€9,99</span></div></div>
+<div class="card plan"><div class="row"><div><b>Trimestrale</b><br><span class="muted">Risparmia</span></div><span class="price">€24,99</span></div></div>
+<div class="card plan"><div class="row"><div><b>Semestrale</b><br><span class="muted">Più conveniente</span></div><span class="price">€44,99</span></div></div>
+<div class="card plan"><div class="row"><div><b>Annuale</b><br><span class="muted">Miglior valore</span></div><span class="price">€69,99</span></div></div>
+</div>
+<div class="card"><div class="title">👥 Porta un amico</div><div class="muted">Condividi il tuo invito. Se l'amico si abbona, si applica il 10% di sconto secondo le condizioni della promozione.</div><button class="button full" onclick="share()">Condividi invito</button></div>
+</section>
+</div>
+
+<nav class="nav"><div class="navin">
+<button id="n-home" class="active" onclick="show('home')"><i>⌂</i>Home</button>
+<button id="n-programs" onclick="show('programs')"><i>☷</i>Programma</button>
+<button id="n-progress" onclick="show('progress')"><i>↗</i>Progressi</button>
+<button id="n-profile" onclick="show('profile')"><i>●</i>Profilo</button>
+</div></nav>
+
+<script>
+function show(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));let n=document.getElementById('n-'+id);if(n)n.classList.add('active');scrollTo(0,0)}
+function toggle(el){el.classList.toggle('done');localStorage.setItem('gymlogic_bookmark',Date.now())}
+let t=90,interval;
+function startTimer(){clearInterval(interval);t=90;interval=setInterval(()=>{t--;let m=String(Math.floor(t/60)).padStart(2,'0'),s=String(t%60).padStart(2,'0');document.getElementById('timer').textContent=m+':'+s;if(t<=0)clearInterval(interval)},1000)}
+function complete(){localStorage.setItem('gymlogic_completed',Date.now());alert('Allenamento completato e progresso salvato.');show('home')}
+async function share(){if(navigator.share)await navigator.share({title:'GymLogic',text:'Entra in GymLogic con il mio invito.'});else alert('Funzione di condivisione disponibile nella versione online.')}
+</script>
+</body></html>
