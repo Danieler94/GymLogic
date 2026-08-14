@@ -1,1 +1,1 @@
-{"name":"GymLogic","short_name":"GymLogic","start_url":"./","display":"standalone","background_color":"#090b0f","theme_color":"#090b0f","icons":[{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
+{"name":"GymLogic","short_name":"GymLogic","start_url":"./","display":"standalone","background_color":"#080b14","theme_color":"#080b14","lang":"it","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml"}]}
